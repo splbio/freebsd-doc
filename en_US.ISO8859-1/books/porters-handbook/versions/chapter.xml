@@ -8,8 +8,7 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink=
   "http://www.w3.org/1999/xlink" version="5.0" xml:id="versions">
 
-  <title
-    xml:id="freebsd-versions"><literal>__FreeBSD_version</literal>
+  <title><literal>__FreeBSD_version</literal>
     Values</title>
 
   <para>Here is a convenient list of
@@ -5434,6 +5433,13 @@
 	  <entry>Version bump to have ABI note distinguish binaries
 	    ready for strict &man.mmap.2; flags checking
 	    (rev <revnumber>271724</revnumber>).</entry>
+	</row>
+
+	<row>
+	  <entry>1100037</entry>
+	  <entry>October 6, 2014</entry>
+	  <entry>11.0-CURRENT after addition of &man.explicit.bzero.3;.
+	    (rev <revnumber>272673</revnumber>).</entry>
 	</row>
 
       </tbody>

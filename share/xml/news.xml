@@ -32,16 +32,55 @@
     <name>2014</name>
 
     <month>
-      <name>9</name>
+      <name>10</name>
 
       <day>
-	<name>24</name>
+	<name>14</name>
 
 	<event>
-	    <p>New committer:
-	      <a href="mailto:jch@FreeBSD.org">Julien Charbon</a> (src)</p>
+	  <title>July&ndash;September, 2014 Status Report</title>
+
+	  <p>The <a
+	      href="&enbase;/news/status/report-2014-07-2014-09.html">July&ndash;September, 2014 Status Report</a>
+	    is now available.</p>
 	</event>
       </day>
+
+      <day>
+	<name>13</name>
+
+	<event>
+	  <title>&os;&nbsp;10.1-RC2 Available</title>
+
+	  <p>The second RC build for the &os;&nbsp;10.1 release cycle
+	    is now available.  ISO images for the amd64, armv6, i386,
+	    ia64, powerpc, powerpc64 and sparc64 architectures are <a
+	      href="&lists.stable;/2014-October/080555.html">available</a>
+	    on most of our <a
+	      href="&url.doc.base-en;/books/handbook/mirrors-ftp.html">&os;
+	      mirror sites</a>.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>4</name>
+
+	<event>
+	  <title>&os;&nbsp;10.1-RC1 Available</title>
+
+	  <p>The first RC build for the &os;&nbsp;10.1 release cycle
+	    is now available.  ISO images for the amd64, armv6, i386,
+	    ia64, powerpc, powerpc64 and sparc64 architectures are <a
+	      href="&lists.stable;/2014-October/080453.html">available</a>
+	    on most of our <a
+	      href="&url.doc.base-en;/books/handbook/mirrors-ftp.html">&os;
+	      mirror sites</a>.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>9</name>
 
       <day>
 	<name>28</name>
@@ -56,6 +95,15 @@
 	    on most of our <a
 	      href="&url.doc.base-en;/books/handbook/mirrors-ftp.html">&os;
 	      mirror sites</a>.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>24</name>
+
+	<event>
+	    <p>New committer:
+	      <a href="mailto:jch@FreeBSD.org">Julien Charbon</a> (src)</p>
 	</event>
       </day>
 
