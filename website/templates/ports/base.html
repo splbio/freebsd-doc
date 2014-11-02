@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-md-3">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="active"><a href="{{ url_for('ports') }}">ports</a></li>
+    <li><a href="{{ url_for('ports_route', sub='contributing') }}">contributing</a></li>
+    <li><a href="{{ url_for('ports_route', sub='tickets') }}">tickets</a></li>
+  </ul>
+</div>
+<div class="col-md-9">
+  <div class="row">
+  	{% block innercontent %}
+  	{% endblock %}
+  </div>
+</div>
+{% endblock %}

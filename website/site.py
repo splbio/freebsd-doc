@@ -35,27 +35,57 @@ def index():
             security=get_rss('security')[:5],
     )
 
-@app.route('/about')
+@app.route('/about/')
 def about():
     return render_template('about/index.html')
 
-@app.route('/docs')
+@app.route('/about/<sub>/')
+def about_route(sub=None):
+    subs = ['advocacy', 'news', 'media', 'donations', 'marketing', 'privacy-policy']
+    if sub in subs:
+        return render_template('about/%s.html' % sub)
+
+@app.route('/docs/')
 def docs():
     return render_template('docs/index.html')
 
-@app.route('/community')
+@app.route('/docs/<sub>/')
+def docs_route(sub=None):
+    subs = ['beginners', 'man-pages', 'handbook', 'publications', 'documentation-project', 'archive']
+    if sub in subs:
+        return render_template('docs/%s.html' % sub)
+
+@app.route('/community/')
 def community():
     return render_template('community/index.html')
 
-@app.route('/ports')
+@app.route('/community/<sub>/')
+def community_route(sub=None):
+    subs = ['contributing', 'release-engineering', 'platforms', 'events']
+    if sub in subs:
+        return render_template('community/%s.html' % sub)
+
+@app.route('/ports/')
 def ports():
     return render_template('ports/index.html')
 
-@app.route('/support')
+@app.route('/ports/<sub>/')
+def ports_route(sub=None):
+    subs = ['contributing', 'tickets']
+    if sub in subs:
+        return render_template('ports/%s.html' % sub)
+
+@app.route('/support/')
 def support():
     return render_template('support/index.html')
 
-@app.route('/download/<distro>')
+@app.route('/support/<sub>/')
+def support_route(sub=None):
+    subs = ['vendors', 'security-information', 'web-resources']
+    if sub in subs:
+        return render_template('support/%s.html' % sub)
+
+@app.route('/download/<distro>/')
 def simple_install(distro=None):
     distro = distros_installs.get(distro)
     if not distro: abort(404)

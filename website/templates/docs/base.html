@@ -3,13 +3,13 @@
 {% block content %}
 <div class="col-md-3">
   <ul class="nav nav-pills nav-stacked">
-    <li class="active"><a href="#">man pages</a></li>
-    <li><a href="#">handbook</a></li>
-    <li><a href="#">faq</a></li>
-    <li><a href="#">publications</a></li>
-    <li><a href="#">beginners</a></li>
-    <li><a href="#">documentation project</a></li>
-    <li><a href="#">archive</a></li>
+    <li class="active"><a href="{{ url_for('docs') }}">docs</a></li>
+    <li><a href="{{ url_for('docs_route', sub='beginners') }}">beginners</a></li>
+    <li><a href="{{ url_for('docs_route', sub='man-pages') }}">man pages</a></li>
+    <li><a href="{{ url_for('docs_route', sub='handbook') }}">handbook</a></li>
+    <li><a href="{{ url_for('docs_route', sub='publications') }}">publications</a></li>
+    <li><a href="{{ url_for('docs_route', sub='documentation-project') }}">documentation project</a></li>
+    <li><a href="{{ url_for('docs_route', sub='archive') }}">archive</a></li>
   </ul>
 </div>
 <div class="col-md-9">
