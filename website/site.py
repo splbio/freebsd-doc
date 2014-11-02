@@ -47,9 +47,9 @@ def docs():
 def community():
     return render_template('community/index.html')
 
-@app.route('/developers')
-def developers():
-    return render_template('developers/index.html')
+@app.route('/ports')
+def ports():
+    return render_template('ports/index.html')
 
 @app.route('/support')
 def support():
