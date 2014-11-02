@@ -43,7 +43,7 @@ def about():
 def about_route(sub=None):
     subs = ['advocacy', 'news', 'media', 'donations', 'marketing', 'privacy-policy']
     if sub in subs:
-        return render_template('about/%s.html' % sub)
+        return render_template('about/%s.html' % sub, sub=sub)
 
 @app.route('/docs/')
 def docs():
@@ -53,7 +53,7 @@ def docs():
 def docs_route(sub=None):
     subs = ['beginners', 'man-pages', 'handbook', 'publications', 'documentation-project', 'archive']
     if sub in subs:
-        return render_template('docs/%s.html' % sub)
+        return render_template('docs/%s.html' % sub, sub=sub)
 
 @app.route('/community/')
 def community():
@@ -63,7 +63,7 @@ def community():
 def community_route(sub=None):
     subs = ['contributing', 'release-engineering', 'platforms', 'events']
     if sub in subs:
-        return render_template('community/%s.html' % sub)
+        return render_template('community/%s.html' % sub, sub=sub)
 
 @app.route('/ports/')
 def ports():
@@ -73,7 +73,7 @@ def ports():
 def ports_route(sub=None):
     subs = ['contributing', 'tickets']
     if sub in subs:
-        return render_template('ports/%s.html' % sub)
+        return render_template('ports/%s.html' % sub, sub=sub)
 
 @app.route('/support/')
 def support():
@@ -83,7 +83,7 @@ def support():
 def support_route(sub=None):
     subs = ['vendors', 'security-information', 'web-resources']
     if sub in subs:
-        return render_template('support/%s.html' % sub)
+        return render_template('support/%s.html' % sub, sub=sub)
 
 @app.route('/download/<distro>/')
 def simple_install(distro=None):
