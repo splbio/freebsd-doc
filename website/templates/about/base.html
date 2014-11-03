@@ -5,19 +5,19 @@
 <div class="col-md-3">
   <ul class="nav nav-pills nav-stacked">
     <li {% if not sub %}class="active"{% endif %}>
-      <a href="{{ url_for('about') }}">{{ _("About") }}</a>
+      <a href="{{ url_for('about', lang_code=g.current_lang) }}">{{ _("About") }}</a>
     </li>
     <li {% if sub == 'advocacy' %}class="active"{% endif %}>
-      <a href="{{ url_for('about_route', sub='advocacy') }}">{{ _("Advocacy") }}</a>
+      <a href="{{ url_for('about_route', lang_code=g.current_lang, sub='advocacy') }}">{{ _("Advocacy") }}</a>
     </li>
     <li {% if sub == 'news' %}class="active"{% endif %}>
-      <a href="{{ url_for('about_route', sub='news') }}">{{ _("News") }}</a>
+      <a href="{{ url_for('about_route', lang_code=g.current_lang, sub='news') }}">{{ _("News") }}</a>
     </li>
     <li {% if sub == 'media' %}class="active"{% endif %}>
-      <a href="{{ url_for('about_route', sub='media') }}">{{ _("Media") }}</a>
+      <a href="{{ url_for('about_route', lang_code=g.current_lang, sub='media') }}">{{ _("Media") }}</a>
     </li>
     <li {% if sub == 'donations' %}class="active"{% endif %}>
-      <a href="{{ url_for('about_route', sub='donations') }}">{{ _("Donations") }}</a>
+      <a href="{{ url_for('about_route', lang_code=g.current_lang, sub='donations') }}">{{ _("Donations") }}</a>
     </li>
   </ul>
 </div>

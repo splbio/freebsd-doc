@@ -7,4 +7,5 @@ LANGUAGES = ["en_US.ISO8859-1", "bn_BD.UTF-8", "da_DK.ISO8859-1", "de_DE.ISO8859
 
 LANGS = [l.split('.')[0] for l in LANGUAGES]
 
+LANG_CODES = [l.split('_')[0] for l in LANGUAGES]
 

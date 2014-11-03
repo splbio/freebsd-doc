@@ -29,22 +29,22 @@
       <div class="masthead">
         <div class="row">
           <div class="col-md-8">
-            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo-full.png') }}"></a>
+            <a href="{{ url_for('index', lang_code=g.current_lang) }}"><img src="{{ url_for('static', filename='img/logo-full.png') }}"></a>
           </div>
           <div class="col-md-4">
             <div class="base-sidemasthead">
               <div class="base-langs">
                 <ul id="lang-choice">
-                  <li><a data-lang='de_DE.ISO8859-1'>de</a> | </li>
-                  <li><a data-lang='en_US.ISO8859-1'>en</a> | </li>
-                  <li><a data-lang='es_ES.ISO8859-1'>es</a> | </li>
-                  <li><a data-lang='fr_FR.ISO8859-1'>fr</a> | </li>
-                  <li><a data-lang='hu_HU.ISO8859-2'>hu</a> | </li>
-                  <li><a data-lang='it_IT.ISO8859-15'>it</a> | </li>
-                  <li><a data-lang='ja_JP.eucJP'>jp</a> | </li>
-                  <li><a data-lang='nl_NL.ISO8859-1'>nl</a> | </li>
-                  <li><a data-lang='ru_RU.KOI8-R'>ru</a> | </li>
-                  <li><a data-lang='zh_CN.UTF-8'>zh_CN</a></li>
+                  <li><a href="/de/" data-lang='de_DE.ISO8859-1'>de</a> | </li>
+                  <li><a href="/en/" data-lang='en_US.ISO8859-1'>en</a> | </li>
+                  <li><a href="/es/" data-lang='es_ES.ISO8859-1'>es</a> | </li>
+                  <li><a href="/fr/" data-lang='fr_FR.ISO8859-1'>fr</a> | </li>
+                  <li><a href="/hu/" data-lang='hu_HU.ISO8859-2'>hu</a> | </li>
+                  <li><a href="/it/" data-lang='it_IT.ISO8859-15'>it</a> | </li>
+                  <li><a href="/jp/" data-lang='ja_JP.eucJP'>jp</a> | </li>
+                  <li><a href="/nl/" data-lang='nl_NL.ISO8859-1'>nl</a> | </li>
+                  <li><a href="/ru/" data-lang='ru_RU.KOI8-R'>ru</a> | </li>
+                  <li><a href="/zh/" data-lang='zh_CN.UTF-8'>zh_CN</a></li>
                 </ul>
               </div>
               <div class="form-inline base-search">
@@ -59,11 +59,11 @@
           </div>
         </div>
         <ul class="nav nav-justified">
-          <li><a href="{{ url_for('about') }}">{{ _('about') }}</a></li>
-          <li><a href="{{ url_for('docs') }}">{{ _('docs') }}</a></li>
-          <li><a href="{{ url_for('community') }}">{{ _('community') }}</a></li>
-          <li><a href="{{ url_for('ports') }}">{{ _('ports') }}</a></li>
-          <li><a href="{{ url_for('support') }}">{{ _('support') }}</a></li>
+          <li><a href="{{ url_for('about', lang_code=g.current_lang) }}">{{ _('about') }}</a></li>
+          <li><a href="{{ url_for('docs', lang_code=g.current_lang) }}">{{ _('docs') }}</a></li>
+          <li><a href="{{ url_for('community', lang_code=g.current_lang) }}">{{ _('community') }}</a></li>
+          <li><a href="{{ url_for('ports', lang_code=g.current_lang) }}">{{ _('ports') }}</a></li>
+          <li><a href="{{ url_for('support', lang_code=g.current_lang) }}">{{ _('support') }}</a></li>
         </ul>
       </div>
 
@@ -129,14 +129,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/jquery.cookie.js') }}"></script>
     <script type="text/javascript">
-	$('#lang-choice li a').click(function() {
-	  event.preventDefault();
-	  console.log($(this).attr("data-lang"));
-	  $.cookie("lang", $(this).attr("data-lang"), {expires: 365, path: '/'});
-	  location.reload();
-	});
     </script>
     {% block js %}
     {% endblock %}

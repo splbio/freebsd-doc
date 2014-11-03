@@ -5,13 +5,13 @@
 <div class="col-md-3">
   <ul class="nav nav-pills nav-stacked">
     <li {% if not sub %}class="active"{% endif %}>
-      <a href="{{ url_for('ports') }}">{{ _("ports") }}</a>
+      <a href="{{ url_for('ports', lang_code=g.current_lang) }}">{{ _("ports") }}</a>
     </li>
     <li {% if sub == 'contributing' %}class="active"{% endif %}>
-      <a href="{{ url_for('ports_route', sub='contributing') }}">{{ _("contributing") }}</a>
+      <a href="{{ url_for('ports_route', lang_code=g.current_lang, sub='contributing') }}">{{ _("contributing") }}</a>
     </li>
     <li {% if sub == 'tickets' %}class="active"{% endif %}>
-      <a href="{{ url_for('ports_route', sub='tickets') }}">{{ _("tickets") }}</a>
+      <a href="{{ url_for('ports_route', lang_code=g.current_lang, sub='tickets') }}">{{ _("tickets") }}</a>
     </li>
   </ul>
 </div>
