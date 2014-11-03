@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="col-md-3">
   <ul class="nav nav-pills nav-stacked">
-    <li {% if not sub %}class="active"{% endif %}><a href="{{ url_for('ports') }}">ports</a></li>
-    <li {% if sub == 'contributing' %}class="active"{% endif %}><a href="{{ url_for('ports_route', sub='contributing') }}">contributing</a></li>
-    <li {% if sub == 'tickets' %}class="active"{% endif %}><a href="{{ url_for('ports_route', sub='tickets') }}">tickets</a></li>
+    <li {% if not sub %}class="active"{% endif %}>
+      <a href="{{ url_for('ports') }}">{{ _("ports") }}</a>
+    </li>
+    <li {% if sub == 'contributing' %}class="active"{% endif %}>
+      <a href="{{ url_for('ports_route', sub='contributing') }}">{{ _("contributing") }}</a>
+    </li>
+    <li {% if sub == 'tickets' %}class="active"{% endif %}>
+      <a href="{{ url_for('ports_route', sub='tickets') }}">{{ _("tickets") }}</a>
+    </li>
   </ul>
 </div>
+
 <div class="col-md-9">
   <div class="row">
-  	{% block innercontent %}
-  	{% endblock %}
+    {% block innercontent %}
+    {% endblock %}
   </div>
 </div>
+
 {% endblock %}

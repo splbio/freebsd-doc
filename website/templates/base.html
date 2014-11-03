@@ -59,11 +59,11 @@
           </div>
         </div>
         <ul class="nav nav-justified">
-          <li><a href="{{ url_for('about') }}">about</a></li>
-          <li><a href="{{ url_for('docs') }}">docs</a></li>
-          <li><a href="{{ url_for('community') }}">community</a></li>
-          <li><a href="{{ url_for('ports') }}">ports</a></li>
-          <li><a href="{{ url_for('support') }}">support</a></li>
+          <li><a href="{{ url_for('about') }}">{{ _('about') }}</a></li>
+          <li><a href="{{ url_for('docs') }}">{{ _('docs') }}</a></li>
+          <li><a href="{{ url_for('community') }}">{{ _('community') }}</a></li>
+          <li><a href="{{ url_for('ports') }}">{{ _('ports') }}</a></li>
+          <li><a href="{{ url_for('support') }}">{{ _('support') }}</a></li>
         </ul>
       </div>
 
@@ -80,45 +80,45 @@
         <div class="base-submenu">
           <ul>
             <li>
-              <b>Shortcuts:</b>
-              <a href="">Mailing List</a> | 
-              <a href="">Report a Bug</a> |
-              <a href="">FAQ</a> |
-              <a href="">Handbook</a> |
-              <a href="">Ports</a>
+            <b>{{ _("Shortcuts") }}:</b>
+              <a href="">{{ _('Mailing List') }}</a> |
+              <a href="">{{ _('Report a Bug') }}</a> |
+              <a href="">{{ _('FAQ') }}</a> |
+              <a href="">{{ _('Handbook') }}</a> |
+              <a href="">{{ _('Ports') }}</a>
             </li>
             <li>
-              <b>About:</b>
-              <a href="">Introduction</a> | 
-              <a href="">Advocacy</a> |
-              <a href="">Marketing</a> |
-              <a href="">Privacy Policy</a>
+            <b>{{ _("About") }}:</b>
+              <a href="">{{ _("Introduction") }}</a> |
+              <a href="">{{ _("Advocacy") }}</a> |
+              <a href="">{{ _("Marketing") }}</a> |
+              <a href="">{{ _("Privacy Policy") }}</a>
             </li>
             <li>
-              <b>Community:</b>
-              <a href="">Mailing List</a> | 
-              <a href="">Forums</a> |
-              <a href="">User Groups</a> |
-              <a href="">Events</a> |
-              <a href="">Q&amp;A (external)</a>
+            <b>{{ _("Community") }}:</b>
+              <a href="">{{ _("Mailing List") }}</a> |
+              <a href="">{{ _("Forums") }}</a> |
+              <a href="">{{ _("User Groups") }}</a> |
+              <a href="">{{ _("Events") }}</a> |
+              <a href="">{{ _("Q&amp;A (external)") }}</a>
             </li>
             <li>
-              <b>Support:</b>
-              <a href="">Vendors</a> | 
-              <a href="">Security Information</a> |
-              <a href="">Bug Reports</a>
+            <b>{{ _("Support") }}:</b>
+              <a href="">{{ _("Vendors") }}</a> |
+              <a href="">{{ _("Security Information") }}</a> |
+              <a href="">{{ _("Bug Reports") }}</a>
             </li>
             <li>
-              <b>Foundation:</b>
-              <a href="">Site</a> | 
-              <a href="">Monetary Donations</a> |
-              <a href="">Hardware Donations</a>
+            <b>{{ _("Foundation") }}:</b>
+              <a href="">{{ _("Site") }}</a> |
+              <a href="">{{ _("Monetary Donations") }}</a> |
+              <a href="">{{ _("Hardware Donations") }}</a>
             </li>
           </ul>
 
         </div>
 
-        <p><a href="#">Site Map</a> | <a href="#">Legal Notices</a> | &copy; 1995–2014 The FreeBSD Project. All rights reserved. The mark FreeBSD is a registered trademark of The FreeBSD Foundation and is used by The FreeBSD Project with the permission of <a href="https://www.freebsdfoundation.org/documents/Guidelines.shtml">The FreeBSD Foundation</a>. <a href="#">Contact</a></p>
+        <p><a href="#">{{ _("Site Map") }}</a> | <a href="#">{{ _("Legal Notices") }}</a> | {% trans %}&copy; 1995–2014 The FreeBSD Project. All rights reserved. The mark FreeBSD is a registered trademark of The FreeBSD Foundation and is used by The FreeBSD Project with the permission of {% endtrans %}<a href="https://www.freebsdfoundation.org/documents/Guidelines.shtml">{{ _("The FreeBSD Foundation") }}</a>. <a href="#">{{ _("Contact") }}</a></p>
       </div>
 
     </div> <!-- /container -->

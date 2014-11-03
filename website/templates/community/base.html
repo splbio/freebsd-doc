@@ -1,19 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="col-md-3">
   <ul class="nav nav-pills nav-stacked">
-    <li {% if not sub %}class="active"{% endif %}><a href="{{ url_for('community') }}">community</a></li>
-    <li {% if sub == 'contributing' %}class="active"{% endif %}><a href="{{ url_for('community_route', sub='contributing') }}">contributing</a></li>
-    <li {% if sub == 'release-engineering' %}class="active"{% endif %}><a href="{{ url_for('community_route', sub='release-engineering') }}">release engineering</a></li>
-    <li {% if sub == 'platforms' %}class="active"{% endif %}><a href="{{ url_for('community_route', sub='platforms') }}">platforms</a></li>
-    <li {% if sub == 'events' %}class="active"{% endif %}><a href="{{ url_for('community_route', sub='events') }}">events</a></li>
+    <li {% if not sub %}class="active"{% endif %}>
+      <a href="{{ url_for('community') }}">{{ _("community") }}</a>
+    </li>
+    <li {% if sub == 'contributing' %}class="active"{% endif %}>
+      <a href="{{ url_for('community_route', sub='contributing') }}">{{ _("contributing") }}</a>
+    </li>
+    <li {% if sub == 'release-engineering' %}class="active"{% endif %}>
+      <a href="{{ url_for('community_route', sub='release-engineering') }}">{{ _("release engineering") }}</a>
+    </li>
+    <li {% if sub == 'platforms' %}class="active"{% endif %}>
+      <a href="{{ url_for('community_route', sub='platforms') }}">{{ _("platforms") }}</a>
+    </li>
+    <li {% if sub == 'events' %}class="active"{% endif %}>
+      <a href="{{ url_for('community_route', sub='events') }}">{{ _("events") }}</a>
+    </li>
   </ul>
 </div>
+
 <div class="col-md-9">
   <div class="row">
-  	{% block innercontent %}
-  	{% endblock %}
+    {% block innercontent %}
+    {% endblock %}
   </div>
 </div>
+
 {% endblock %}

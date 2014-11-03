@@ -1,21 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="col-md-3">
   <ul class="nav nav-pills nav-stacked">
-    <li {% if not sub %}class="active"{% endif %}><a href="{{ url_for('docs') }}">docs</a></li>
-    <li {% if sub == 'beginners' %}class="active"{% endif %}><a href="{{ url_for('docs_route', sub='beginners') }}">beginners</a></li>
-    <li {% if sub == 'man-pages' %}class="active"{% endif %}><a href="{{ url_for('docs_route', sub='man-pages') }}">man pages</a></li>
-    <li {% if sub == 'handbook' %}class="active"{% endif %}><a href="{{ url_for('docs_route', sub='handbook') }}">handbook</a></li>
-    <li {% if sub == 'publications' %}class="active"{% endif %}><a href="{{ url_for('docs_route', sub='publications') }}">publications</a></li>
-    <li {% if sub == 'documentation-project' %}class="active"{% endif %}><a href="{{ url_for('docs_route', sub='documentation-project') }}">documentation project</a></li>
-    <li {% if sub == 'archive' %}class="active"{% endif %}><a href="{{ url_for('docs_route', sub='archive') }}">archive</a></li>
+    <li {% if not sub %}class="active"{% endif %}>
+      <a href="{{ url_for('docs') }}">{{ _("docs") }}</a>
+    </li>
+    <li {% if sub == 'beginners' %}class="active"{% endif %}>
+      <a href="{{ url_for('docs_route', sub='beginners') }}">{{ _("beginners") }}</a>
+    </li>
+    <li {% if sub == 'man-pages' %}class="active"{% endif %}>
+      <a href="{{ url_for('docs_route', sub='man-pages') }}">{{ _("manual pages") }}</a>
+    </li>
+    <li {% if sub == 'handbook' %}class="active"{% endif %}>
+      <a href="{{ url_for('docs_route', sub='handbook') }}">{{ _("handbook") }}</a>
+    </li>
+    <li {% if sub == 'publications' %}class="active"{% endif %}>
+      <a href="{{ url_for('docs_route', sub='publications') }}">{{ _("publications") }}</a>
+    </li>
+    <li {% if sub == 'documentation-project' %}class="active"{% endif %}>
+      <a href="{{ url_for('docs_route', sub='documentation-project') }}">{{ _("documentation project") }}</a>
+    </li>
+    <li {% if sub == 'archive' %}class="active"{% endif %}>
+      <a href="{{ url_for('docs_route', sub='archive') }}">{{ _("archive") }}</a>
+    </li>
   </ul>
 </div>
+
 <div class="col-md-9">
   <div class="row">
-  	{% block innercontent %}
-  	{% endblock %}
+    {% block innercontent %}
+    {% endblock %}
   </div>
 </div>
+
 {% endblock %}

@@ -3,16 +3,26 @@
 {% block content %}
 <div class="col-md-3">
   <ul class="nav nav-pills nav-stacked">
-    <li {% if not sub %}class="active"{% endif %}><a href="{{ url_for('support') }}">Support</a></li>
-    <li {% if sub == 'vendors' %}class="active"{% endif %}><a href="{{ url_for('support_route', sub='vendors') }}">Vendors</a></li>
-    <li {% if sub == 'security-information' %}class="active"{% endif %}><a href="{{ url_for('support_route', sub='security-information') }}">Security Information</a></li>
-    <li {% if sub == 'web-resources' %}class="active"{% endif %}><a href="{{ url_for('support_route', sub='web-resources') }}">Web Resources</a></li>
+    <li {% if not sub %}class="active"{% endif %}>
+      <a href="{{ url_for('support') }}">{{ _("Support") }}</a>
+    </li>
+    <li {% if sub == 'vendors' %}class="active"{% endif %}>
+      <a href="{{ url_for('support_route', sub='vendors') }}">{{ _("Vendors") }}</a>
+    </li>
+    <li {% if sub == 'security-information' %}class="active"{% endif %}>
+      <a href="{{ url_for('support_route', sub='security-information') }}">{{ _("Security Information") }}</a>
+    </li>
+    <li {% if sub == 'web-resources' %}class="active"{% endif %}>
+      <a href="{{ url_for('support_route', sub='web-resources') }}">{{ _("Web Resources") }}</a>
+    </li>
   </ul>
 </div>
+
 <div class="col-md-9">
   <div class="row">
-  	{% block innercontent %}
-  	{% endblock %}
+    {% block innercontent %}
+    {% endblock %}
   </div>
 </div>
+
 {% endblock %}
