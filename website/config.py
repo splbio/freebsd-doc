@@ -9,3 +9,6 @@ LANGS = [l.split('.')[0] for l in LANGUAGES]
 
 LANG_CODES = [l.split('_')[0] for l in LANGUAGES]
 
+LANG_MAP = {l.split('_')[0]:l for l in LANGUAGES}
+
+LANG_LOCALE = {l.split('_')[0]:l.split('_')[0] for l in LANGUAGES}

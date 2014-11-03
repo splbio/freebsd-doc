@@ -1,7 +1,8 @@
 import os
 import config
 
-from flask import Flask, abort, g, request, url_for, redirect, render_template
+from flask import Flask, abort, g, request, url_for, redirect
+from flask import render_template as flask_render_template
 from distros_installs import distros_installs
 
 from flask.ext.babel import Babel
@@ -17,6 +18,11 @@ babel = Babel(app, default_locale="en_US.ISO8859-1")
 
 from events import get_rss
 
+def render_template(template, *args, **kwargs):
+    lang_path = config.LANG_MAP.get(g.current_lang, 'en_US.ISO8859-1')
+    #return flask_render_template('%s/htdocs/%s' % (lang_path, template), *args, **kwargs)
+    return flask_render_template(template, *args, **kwargs)
+
 @app.before_request
 def before():
     if request.view_args and 'lang_code' in request.view_args:
@@ -26,8 +32,10 @@ def before():
         g.current_lang = request.view_args['lang_code']
         request.view_args.pop('lang_code')
 
+@babel.localeselector
 def get_locale():
-    return g.get('current_lang', 'en')
+    lang = config.LANG_LOCALE.get(g.get('current_lang'), 'en_US.ISO8859-1')
+    return lang
 
 @app.route('/')
 def root():
