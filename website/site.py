@@ -20,7 +20,7 @@ from events import get_rss
 
 def render_template(template, *args, **kwargs):
     lang_path = config.LANG_MAP.get(g.current_lang, 'en_US.ISO8859-1')
-    #return flask_render_template('%s/htdocs/%s' % (lang_path, template), *args, **kwargs)
+    kwargs['include_template'] = "%s/htdocs/%s" % (lang_path, template)
     return flask_render_template(template, *args, **kwargs)
 
 @app.before_request
@@ -53,53 +53,53 @@ def index():
 
 @app.route('/<lang_code>/about/')
 def about():
-    return render_template('about/index.html')
+    return render_template('about.html')
 
 @app.route('/<lang_code>/about/<sub>/')
 def about_route(sub=None):
     subs = ['advocacy', 'news', 'media', 'donations', 'marketing', 'privacy-policy']
     if sub in subs:
-        return render_template('about/%s.html' % sub, sub=sub)
+        return render_template('about.html', sub=sub)
 
 @app.route('/<lang_code>/docs/')
 def docs():
-    return render_template('docs/index.html')
+    return render_template('docs.html')
 
 @app.route('/<lang_code>/docs/<sub>/')
 def docs_route(sub=None):
     subs = ['beginners', 'man-pages', 'handbook', 'publications', 'documentation-project', 'archive']
     if sub in subs:
-        return render_template('docs/%s.html' % sub, sub=sub)
+        return render_template('docs.html', sub=sub)
 
 @app.route('/<lang_code>/community/')
 def community():
-    return render_template('community/index.html')
+    return render_template('community.html')
 
 @app.route('/<lang_code>/community/<sub>/')
 def community_route(sub=None):
     subs = ['contributing', 'release-engineering', 'platforms', 'events']
     if sub in subs:
-        return render_template('community/%s.html' % sub, sub=sub)
+        return render_template('community.html', sub=sub)
 
 @app.route('/<lang_code>/ports/')
 def ports():
-    return render_template('ports/index.html')
+    return render_template('ports.html')
 
 @app.route('/<lang_code>/ports/<sub>/')
 def ports_route(sub=None):
     subs = ['contributing', 'tickets']
     if sub in subs:
-        return render_template('ports/%s.html' % sub, sub=sub)
+        return render_template('ports.html', sub=sub)
 
 @app.route('/<lang_code>/support/')
 def support():
-    return render_template('support/index.html')
+    return render_template('support.html')
 
 @app.route('/<lang_code>/support/<sub>/')
 def support_route(sub=None):
     subs = ['vendors', 'security-information', 'web-resources']
     if sub in subs:
-        return render_template('support/%s.html' % sub, sub=sub)
+        return render_template('support.html', sub=sub)
 
 @app.route('/<lang_code>/download/<distro>/')
 def simple_install(distro=None):
