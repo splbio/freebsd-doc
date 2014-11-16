@@ -14,7 +14,7 @@ else
 fi
 
 # Install all dependencies in the virtual environment.
-source env/bin/activate && pip install -r $cwd/requirements.txt
+. env/bin/activate && pip install -r $cwd/requirements.txt
 
 # Set up database.
 #if [ ! -f "$cwd/something.db" ]; then
@@ -26,9 +26,9 @@ source env/bin/activate && pip install -r $cwd/requirements.txt
 #fi
 
 echo "Generating translations..."
-source env/bin/activate && pybabel compile -d website/translations
+. env/bin/activate && pybabel compile -d website/translations
 
 echo "Setup is done!"
 echo "Starting up..."
-source env/bin/activate && python website/site.py
+. env/bin/activate && python website/site.py
 
