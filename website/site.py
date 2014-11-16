@@ -43,7 +43,7 @@ def root():
 
 @app.route('/<lang_code>/')
 def index():
-    from placeholders import news, events, press, security
+    #from placeholders import news, events, press, security
     return render_template('index.html',
             news=get_rss('news')[:5],
             events=get_rss('upcoming')[:5],
