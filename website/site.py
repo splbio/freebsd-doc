@@ -107,7 +107,14 @@ def simple_install(distro=None):
     if not distro: abort(404)
     return render_template('simple_install.html', distro=distro)
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    args = {}
+    if os.environ.get("FLASK_DEBUG", None) is not None:
+	args["debug"] = True
+    if os.environ.get("FLASK_HOST", None) is not None:
+	args["host"] = os.environ.get("FLASK_HOST")
+    if os.environ.get("FLASK_PORT", None) is not None:
+	args["port"] = os.environ.get("FLASK_PORT")
+
+    app.run(**args)
 
